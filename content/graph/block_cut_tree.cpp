@@ -1,10 +1,11 @@
 #include "../contest/template.cpp"
 
-vector<vector<int>> block_cut(vector<vector<int>> g, vector<int> &is_cut, vector<int> &at, vector<vector<int>> &comps) {
+vector<vector<int>> block_cut(vector<vector<int>> g, vector<int> &is_cut, vector<int> &at) {
     int n = sz(g);
     is_cut.resize(n);
 
     vector<int> st, tin(n), low(n);
+    vector<vector<int>> comps;
 
     int t = 0;
     auto dfs = [&](auto &self, int v, int p) -> void {
